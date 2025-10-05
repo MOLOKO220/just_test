@@ -72,7 +72,7 @@ export default function BuildObjects() {
         </header>
         {showedObjects && <BuildObjectsSlider builtObjects={showedObjects} />}
         <div>
-          Завантажити ще{" "}
+          Завантажити ще
           <svg
             width="8"
             height="13"

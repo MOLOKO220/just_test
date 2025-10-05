@@ -2,8 +2,11 @@
 import "./BuildObjectsSlider.scss";
 import CartBuildObject from "../CartBuildObject/CartBuildObject";
 import { BuiltObjectsData } from "../BuildObjects/types";
+
+import dynamic from "next/dynamic";
+
 // slider
-import Slider from "react-slick";
+const Slider = dynamic(() => import("react-slick"), { ssr: false });
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 
