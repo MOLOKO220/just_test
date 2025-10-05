@@ -1,0 +1,36 @@
+.BuildObjectsSlider {
+  margin-top: 100px;
+  .slick-list {
+    height: 650px;
+    .slick-track {
+      padding-top: 20px;
+      display: flex;
+      .slick-current {
+        display: flex;
+        justify-content: start;
+        @media (max-width: 1360px) {
+          justify-content: center;
+        }
+      }
+      .slick-current + .slick-slide.slick-active {
+        display: flex;
+        justify-content: center;
+        @media (max-width: 1360px) {
+          justify-content: center;
+        }
+      }
+      .slick-current + .slick-slide.slick-active + .slick-slide.slick-active {
+        display: flex;
+        justify-content: end;
+      }
+    }
+  }
+  .slick-dots {
+    @media (max-width: 900px) {
+      bottom: -60px;
+    }
+    @media (max-width: 600px) {
+      bottom: -100px;
+    }
+  }
+}

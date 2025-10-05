@@ -1,0 +1,110 @@
+.CartBuildObject {
+  width: 440px;
+  min-height: 600px;
+  background: rgb(239, 243, 246);
+  border-left: 1px solid rgba(168, 168, 168, 0.2);
+  border-right: 1px solid rgba(168, 168, 168, 0.2);
+  border-top: 1px solid rgba(168, 168, 168, 0.2);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
+  padding: 20px 12px;
+  @media (max-width: 460px) {
+    width: 90vw;
+  }
+  > header {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    > p {
+      font-family: "Inter Tight", sans-serif;
+      font-weight: 500;
+      font-size: 20px;
+      line-height: 120%;
+      letter-spacing: -0.02em;
+      color: #0a0f13;
+    }
+    > div {
+      border: 1px solid #a8a8a8;
+      border-radius: 1000px;
+      width: 94px;
+      height: 28px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: "Inter Tight", sans-serif;
+      font-weight: 500;
+      font-size: 14px;
+      line-height: 140%;
+      letter-spacing: -0.02em;
+      text-transform: uppercase;
+      color: #0a0f13;
+    }
+  }
+  .CartBuildObject__img {
+    width: 416px;
+    height: 233px;
+  }
+  > h3 {
+    font-family: "Inter Tight", sans-serif;
+    font-weight: 600;
+    font-size: 24px;
+    line-height: 120%;
+    letter-spacing: -0.02em;
+    color: #0a0f13;
+    width: 100%;
+  }
+  > p {
+    font-family: "Inter Tight", sans-serif;
+    font-weight: 500;
+    font-size: 20px;
+    line-height: 120%;
+    letter-spacing: -0.02em;
+    color: #0a0f13;
+    width: 100%;
+  }
+  > footer {
+    width: 100%;
+    > h6 {
+      width: 100%;
+      font-family: "Inter Tight", sans-serif;
+      font-weight: 500;
+      font-size: 14px;
+      line-height: 140%;
+      letter-spacing: -0.02em;
+      text-transform: uppercase;
+      color: #0a0f13;
+    }
+    > div {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 2px;
+      margin-top: 9px;
+      > p {
+        font-family: "Inter Tight", sans-serif;
+        font-weight: 500;
+        font-size: 14px;
+        line-height: 140%;
+        letter-spacing: -0.02em;
+        text-transform: uppercase;
+        color: #737373;
+        padding: 4px 8px;
+        border: 1px solid rgba(168, 168, 168, 0.2);
+        border-radius: 100px;
+      }
+    }
+  }
+  > .CartBuildObject_Top {
+    position: absolute;
+    top: -20px;
+    height: 50px;
+    width: 50px;
+  }
+  > .CartBuildObject_Down {
+    position: relative;
+    bottom: -40px;
+    min-width: 107%;
+  }
+}
