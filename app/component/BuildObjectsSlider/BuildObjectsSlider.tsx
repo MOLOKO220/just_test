@@ -9,35 +9,43 @@ import dynamic from "next/dynamic";
 const Slider = dynamic(() => import("react-slick"), { ssr: false });
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
+import { useEffect, useState } from "react";
 
 export default function BuildObjectsSlider({
   builtObjects,
 }: {
   builtObjects: BuiltObjectsData[];
 }) {
+  const [slidesToShow, setSlidesToShow] = useState(3);
+  const [slidesToScroll, setSlidesToScroll] = useState(3);
+
+  const updateSlides = () => {
+    const width = window.innerWidth;
+    if (width < 915) {
+      setSlidesToShow(1);
+      setSlidesToScroll(1);
+    } else if (width < 1360) {
+      setSlidesToShow(2);
+      setSlidesToScroll(2);
+    } else {
+      setSlidesToShow(3);
+      setSlidesToScroll(3);
+    }
+  };
+
+  useEffect(() => {
+    updateSlides(); // выставляем сразу при монтировании
+    window.addEventListener("resize", updateSlides);
+    return () => window.removeEventListener("resize", updateSlides);
+  }, []);
+
   const settings = {
     dots: true,
     infinite: true,
-    slidesToShow: 3,
-    slidesToScroll: 3,
     arrows: false,
     swipe: true,
-    responsive: [
-      {
-        breakpoint: 1360,
-        settings: {
-          slidesToShow: 2,
-          slidesToScroll: 2,
-        },
-      },
-      {
-        breakpoint: 915,
-        settings: {
-          slidesToShow: 1,
-          slidesToScroll: 1,
-        },
-      },
-    ],
+    slidesToShow,
+    slidesToScroll,
   };
 
   return (
